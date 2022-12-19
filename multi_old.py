@@ -32,21 +32,36 @@ def multiplicar(A, B, C = 0):
 # b = "4"
 # b = "3"
 # b = "2"
-b = "1"
-sumatoria = ""
-lleva = 0
-x = 0
-for a in numberA[::-1]:
-    print("a:", a)
-    rpta, lleva = multiplicar(a, b, lleva)
-    print(f"rtpa {rpta} - lleva {lleva}")
-    sumatoria = str(rpta) + sumatoria
-    x += 1
-    if (x == len(numberA)):
-        print("final")
-        sumatoria = str(lleva) + sumatoria
-    # print(sumatoria)
-print(sumatoria)
+# b = "1"
+bx = 0
+respuestas = []
+for b in numberB[::-1]:
+    sumatoria = ""
+    lleva = 0
+    ax = 0
+    for a in numberA[::-1]:
+        # print("a:", a)
+        rpta, lleva = multiplicar(a, b, lleva)
+        # print(f"rtpa {rpta} - lleva {lleva}")
+        sumatoria = str(rpta) + sumatoria
+        ax += 1
+        if (ax == len(numberA)):
+            # print("final")
+            sumatoria = str(lleva) + sumatoria
+        # print(sumatoria)
+    # print(f"bx: {bx}")
+    for x in range(bx):
+        sumatoria = sumatoria + "0"
+    # print(sumatoria, bx)
+    respuestas.append(int(sumatoria))
+    bx += 1
+
+# print(respuestas)
+final = 0
+for x in respuestas:
+    final = final + x
+
+print(final)
 
 # print(multiplicar(4, 8, 0))
 # print(multiplicar(4, 7, 3))
